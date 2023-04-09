@@ -1,7 +1,7 @@
 import React from 'react';
 
-const AddChannel = () => {
+export const AddChannel = () => {
   return <div>AddChannel</div>;
 };
 
-export default AddChannel;
+// export default AddChannel;

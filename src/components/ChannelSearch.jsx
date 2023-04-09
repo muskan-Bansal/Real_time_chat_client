@@ -13,31 +13,34 @@ const ChannelSearch = () => {
     const [directChannels, setDirectChannels] = useState([]);
 
 
-    const getChannels=async (text)=>{
+    const getChannels= async (text)=>{
     try{
-
+      //TODO:fetch channels
+      //! fetch channels
+      //* fetch channels
     }catch(err){
-      setQuery('')}
+      setQuery('')
+    }
 
     }
 
-     const onSearch=(e)=>{
-   e.preventDefaullt();
+     const onSearch=(event)=>{
    setLoading(true);
-   setQuery(e.target.value)
-   getChannels(e.target.value)
+   setQuery(event.target.value)
+   getChannels(event.target.value)
+   event.preventDefaullt();
  }
 
 
   return (
     <div className="channel-search-container">
       <div className="channel-search__input__wrapper">
-        <div className="hannel-serach__input__icon">
+        <div className="channel-serach__input__icon">
           <SearchIcon/>
         </div>
           <input 
             className="channel-search__input__text" 
-            placeholder="Search" 
+            placeholder=" Search" 
             type="text" 
             value={query}  
             onChange={onSearch}

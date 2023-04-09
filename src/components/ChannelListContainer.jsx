@@ -3,6 +3,7 @@
 import Cookies from 'universal-cookie';
 
  import { ChannelSearch, TeamChannelList, TeamChannelPreview } from './';
+ 
 import HospitalIcon from '../assets/hospital.png'
 import LogoutIcon from '../assets/logout.png'
 
@@ -42,14 +43,33 @@ const channelRenderFilterFn=()=>{
       <CompanyHeader/> 
       <ChannelSearch/>
       <ChannelList  
-       filters   
-       channelRenderFilterFn 
-       List={(ListProps)=>{
-        <TeamChannelList  {...listProps}  />
-       }}
+            filters   ={{}}
+            channelRenderFilterFn ={()=>{}}
+            
+            List={(listProps)=>{
+            <TeamChannelList  {...listProps}    type="team" />
+            }} 
 
+            Preview={(previewProps)=>(
+                 <TeamChannelPreview 
+                            {...previewProps} 
+                            type="team"
+                        />
+            )} 
+       />
+      <ChannelList  
+            filters   ={{}}
+            channelRenderFilterFn ={()=>{}} 
+            List={(listProps)=>{
+            <TeamChannelList  {...listProps}    type="messaging" />
+            }} 
 
-
+            Preview={(previewProps)=>(
+                 <TeamChannelPreview 
+                            {...previewProps} 
+                            type="messaging"
+                        />
+            )} 
        />
     </div>
     </>
